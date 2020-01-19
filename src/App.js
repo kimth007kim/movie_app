@@ -6,10 +6,10 @@ class App extends React.Component {
     count: 0
   }; //바뀔숫자를 데이터에다가 넣음
   add = () => {
-    console.log("add");
+    this.setState(current => ({ count: this.state.count + 1 }));
   };
   minus = () => {
-    console.log("minus");
+    this.setState(current => ({ count: this.state.count - 1 }));
   };
   render() {
     return (
