@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import axios from "axios";
 
 class App extends React.Component {
   state = {
@@ -7,13 +7,13 @@ class App extends React.Component {
     movies: []
   };
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ isLoading: false });
-    }, 6000);
+    axios.get("https://yts-proxy.now.sh/list_movies.json");
   }
   render() {
     const { isLoading } = this.state;
     return <div>{this.state.isLoading ? "Loading..." : "We are ready"}</div>;
+
+    //5분36초까지 들음
   }
 }
 
